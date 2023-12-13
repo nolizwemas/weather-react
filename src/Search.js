@@ -1,35 +1,31 @@
-import React, { Component } from "react";
+import "./index.css";
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ""
-    };
-  }
-
-  _handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  _submit(event) {
-    event.preventDefault();
-    this.props.refresh(this.state.value);
-  }
-
-  render() {
-    return (
-      <form className="float-left" onClick={event => this._submit(event)}>
-        <input
-          type="text"
-          placeholder="Enter a city"
-          autoComplete="off"
-          autoFocus="on"
-          onChange={event => this._handleChange(event)}
-          value={this.state.value}
-        />
-        <input type="submit" value="Search" className="btn btn-primary" />
-      </form>
-    );
-  }
+export default function Search() {
+  return (
+    <div className="Search">
+      <div className="container">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Search city..."
+                class="form-control"
+                id="search-input"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn w-100 btnSearch"
+                id="search-btn"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

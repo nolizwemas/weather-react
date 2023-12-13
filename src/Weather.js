@@ -7,7 +7,7 @@ import CurrentLocation from "./CurrentLocation";
 import Search from "./Search";
 import DateUtil from "./DateUtil";
 import Api from "./Api";
-import Forecast from "./Forecast";
+import Forecast from "./WeatherForecast";
 
 export default class Weather extends Component {
   static propTypes = {
